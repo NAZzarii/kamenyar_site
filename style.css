@@ -1,0 +1,302 @@
+/* =========================================
+   БАЗОВІ НАЛАШТУВАННЯ
+   ========================================= */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Montserrat', sans-serif; }
+
+body { 
+    background-color: #121212; color: #f5f5f5; line-height: 1.6; 
+    opacity: 0; transition: opacity 0.5s ease-in-out; /* Плавна поява сторінки */
+}
+
+body.loaded { opacity: 1; }
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+/* =========================================
+   ШАПКА (HEADER) ТА МЕНЮ
+   ========================================= */
+header { 
+    display: flex; justify-content: space-between; align-items: center; 
+    padding: 20px 5%; background: rgba(18, 18, 18, 0.9); 
+    position: fixed; width: 100%; top: 0; z-index: 100;
+    backdrop-filter: blur(10px); transition: all 0.4s ease;
+}
+
+header.scrolled {
+    background: rgba(0, 0, 0, 0.95); padding: 10px 5%;
+    border-bottom: 1px solid #d4af37;
+}
+
+.logo { 
+    font-size: 24px; font-weight: 800; color: #d4af37; 
+    text-transform: uppercase; letter-spacing: 1px; text-decoration: none;
+}
+
+.logo span { color: #fff; }
+
+nav a { color: #fff; text-decoration: none; margin-left: 30px; font-weight: 400; transition: 0.3s; }
+nav a:hover { color: #d4af37; }
+nav a.active { color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 5px; }
+
+/* =========================================
+   ГОЛОВНИЙ ЕКРАН (HERO)
+   ========================================= */
+.hero {
+    height: 100vh; display: flex; flex-direction: column; 
+    align-items: center; justify-content: center; text-align: center; padding: 0 20px;
+    background-color: #121212; 
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(18,18,18,1)), url('img/hero-bg.jpg');
+    background-position: center; background-size: cover; background-attachment: fixed; 
+}
+
+.hero h1 { font-size: clamp(2.5rem, 5vw, 4.5rem); margin-bottom: 20px; font-weight: 700; text-transform: uppercase; }
+.hero h1 span { color: #d4af37; }
+.hero p { font-size: 1.2rem; margin-bottom: 40px; color: #ccc; max-width: 600px; }
+
+/* =========================================
+   КНОПКИ ТА ЗАГАЛЬНІ ЕЛЕМЕНТИ
+   ========================================= */
+.btn { 
+    padding: 15px 40px; background-color: #d4af37; color: #121212; 
+    text-decoration: none; font-weight: 600; text-transform: uppercase; 
+    border-radius: 4px; transition: 0.3s; border: 1px solid #d4af37;
+}
+
+.btn:hover { background-color: transparent; color: #d4af37; }
+
+.section-title { text-align: center; font-size: 2.5rem; margin-bottom: 60px; color: #fff; }
+.section-title span { color: #d4af37; }
+
+.page-header {
+    padding-top: 120px; padding-bottom: 40px; text-align: center;
+    background: linear-gradient(rgba(18,18,18,0.8), rgba(18,18,18,1)), url('hero-bg.html');
+    background-size: cover; background-position: center;
+}
+.page-header h1 { font-size: 3rem; text-transform: uppercase; }
+.page-header h1 span { color: #d4af37; }
+
+/* =========================================
+   СЕКЦІЯ ПОСЛУГ (Головна сторінка)
+   ========================================= */
+.services { padding: 100px 5%; background-color: #1a1a1a; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+.card, a.card { 
+    background: #242424; padding: 40px 30px; border-radius: 8px; 
+    text-align: center; transition: 0.3s; border-bottom: 3px solid transparent;
+    text-decoration: none; display: block; color: inherit;
+}
+.card:hover { transform: translateY(-10px); border-color: #d4af37; background: #2a2a2a; }
+.card h3 { margin-bottom: 15px; font-size: 1.5rem; color: #fff; }
+.card p { color: #aaa; font-size: 0.95rem; }
+
+/* =========================================
+   СТОРІНКА "ПРО НАС"
+   ========================================= */
+.about-full { padding: 60px 5%; }
+.about-grid { display: flex; align-items: flex-start; justify-content: space-between; gap: 60px; position: relative; }
+
+.about-image-side { flex: 1; position: relative; min-height: 400px; }
+.about-image-side img { width: 100%; display: block; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+
+.experience-card {
+    position: absolute; bottom: 0; left: 0; z-index: 2;
+    background: #d4af37; padding: 25px; border-radius: 8px; color: #121212; 
+    min-width: 180px; box-shadow: 0 10px 30px rgba(0,0,0,0.4); text-align: left;
+}
+.experience-card span { font-size: 2.8rem; font-weight: 800; display: block; line-height: 1; margin-bottom: 5px; }
+.experience-card p { font-weight: 600; text-transform: uppercase; font-size: 0.9rem; margin: 0; }
+
+.about-text-side { flex: 1.5; padding-top: 30px; }
+.about-text-side h2 { font-size: 2.2rem; margin-bottom: 30px; }
+.about-text-side h2 span { color: #d4af37; }
+.about-text-side p { color: #ccc; margin-bottom: 25px; font-size: 1.1rem; line-height: 1.8; }
+
+.stats-row { display: flex; gap: 40px; margin: 40px 0; border-top: 1px solid #333; padding-top: 30px; }
+.stat-item h3 { color: #d4af37; font-size: 2rem; margin-bottom: 5px; }
+.stat-item p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: #888; }
+
+/* =========================================
+   СТОРІНКА КОНТАКТІВ
+   ========================================= */
+.contact-full { padding: 80px 5%; }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+
+.contact-info h2 { font-size: 2.2rem; margin-bottom: 20px; }
+.contact-info h2 span { color: #d4af37; }
+.contact-info > p { color: #ccc; margin-bottom: 40px; font-size: 1.1rem; line-height: 1.6; }
+
+.info-item { margin-bottom: 25px; font-size: 1.1rem; }
+.info-item strong { color: #d4af37; display: block; margin-bottom: 5px; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 1px;}
+.info-item a, .info-item span { color: #f5f5f5; text-decoration: none; transition: 0.3s; font-size: 1.2rem; }
+.info-item a:hover { color: #d4af37; }
+
+.messengers { display: flex; gap: 15px; margin-top: 40px; flex-wrap: wrap; }
+.btn-messenger {
+    padding: 15px 25px; border-radius: 6px; text-decoration: none; color: #fff;
+    font-weight: 600; transition: 0.3s; text-align: center; flex: 1; min-width: 180px;
+}
+.telegram { background-color: #2AABEE; }
+.telegram:hover { background-color: #228bcf; transform: translateY(-3px); }
+.viber { background-color: #7360F2; }
+.viber:hover { background-color: #5c4cd9; transform: translateY(-3px); }
+
+.contact-form-wrapper {
+    background: #1a1a1a; padding: 50px 40px; border-radius: 10px;
+    border-top: 4px solid #d4af37; box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+.contact-form h3 { margin-bottom: 30px; font-size: 1.8rem; color: #fff; text-align: center; }
+
+.input-group { margin-bottom: 20px; }
+.input-group input, .input-group textarea {
+    width: 100%; padding: 15px 20px; background: #242424; border: 1px solid #333;
+    border-radius: 6px; color: #fff; font-size: 1rem; outline: none; transition: 0.3s; font-family: inherit;
+}
+.input-group input:focus, .input-group textarea:focus { border-color: #d4af37; background: #2a2a2a; }
+.submit-btn { width: 100%; cursor: pointer; border: none; font-size: 1.1rem; margin-top: 10px; }
+
+/* =========================================
+   КАТАЛОГ ТОВАРІВ
+   ========================================= */
+.breadcrumb { padding-top: 100px; padding-bottom: 20px; background-color: #0a0a0a; font-size: 0.9rem; }
+.breadcrumb a { color: #d4af37; text-decoration: none; margin-right: 5px; }
+.breadcrumb span { color: #888; margin-left: 5px; }
+
+.product-section { padding: 60px 5%; }
+.product-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: start; }
+
+.product-gallery { width: 100%; }
+.main-image-box { width: 100%; height: 450px; border-radius: 8px; overflow: hidden; margin-bottom: 15px; background-color: #1a1a1a; }
+.main-image-box img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.3s ease; }
+
+.thumbnails { display: flex; gap: 15px; }
+.thumbnails img {
+    width: 100px; height: 75px; object-fit: cover; border-radius: 4px;
+    cursor: pointer; border: 2px solid transparent; transition: 0.3s; opacity: 0.6;
+}
+.thumbnails img:hover { opacity: 1; }
+.thumbnails img.active-thumb { border-color: #d4af37; opacity: 1; }
+
+.product-details h1 { font-size: 2.5rem; margin-bottom: 15px; text-transform: uppercase; }
+.product-details h2 { font-size: 2.2rem; margin-bottom: 15px; text-transform: uppercase; }
+.product-details h1 span, .product-details h2 span { color: #d4af37; }
+
+.price { 
+    font-size: 1.5rem; font-weight: 700; color: #fff; margin-bottom: 30px; 
+    background: #1a1a1a; display: inline-block; padding: 10px 20px; 
+    border-radius: 6px; border-left: 4px solid #d4af37;
+}
+
+.description p { color: #ccc; line-height: 1.7; margin-bottom: 20px; font-size: 1.1rem; }
+.description ul { list-style: none; margin-bottom: 40px; }
+.description ul li { margin-bottom: 10px; color: #bbb; padding-left: 20px; position: relative; }
+.description ul li::before { content: '•'; position: absolute; left: 0; color: #d4af37; font-size: 1.2rem; }
+.description ul li strong { color: #fff; }
+
+.order-btn { display: inline-block; padding: 15px 50px; font-size: 1.1rem; }
+
+/* Розділення товарів */
+.product-item { padding-bottom: 80px; margin-bottom: 80px; border-bottom: 2px dashed #333; }
+.product-item:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+.product-divider { display: none; }
+
+/* =========================================
+   ПІДВАЛ (FOOTER)
+   ========================================= */
+footer { text-align: center; padding: 30px; background: #0a0a0a; color: #666; font-size: 0.9rem; }
+
+/* =========================================
+   АДАПТИВНІСТЬ ДЛЯ МОБІЛЬНИХ (МЕНШЕ 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    /* Шапка і меню */
+    header { flex-direction: column; padding: 15px 5%; background: rgba(18, 18, 18, 0.98); }
+    header.scrolled { padding: 10px 5%; }
+    .logo { margin-bottom: 10px; font-size: 22px; }
+    nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; width: 100%; }
+    nav a { margin-left: 0; font-size: 0.85rem; padding: 5px 10px; border-radius: 4px; background: #242424; }
+    nav a.active { border-bottom: none; background: #d4af37; color: #121212; }
+
+    /* Заголовки та відступи */
+    .hero h1 { font-size: 2.2rem; }
+    .hero p { font-size: 1rem; margin-bottom: 30px; }
+    .page-header { padding-top: 140px; padding-bottom: 30px; }
+    .page-header h1 { font-size: 2rem; }
+    .section-title { font-size: 2rem; margin-bottom: 40px; }
+    .services, .about-section, .about-full, .contact-full, .product-section { padding: 50px 5%; }
+
+    /* Сітки (Все в одну колонку) */
+    .grid, .contact-grid, .product-layout { grid-template-columns: 1fr; gap: 40px; }
+    .about-grid { flex-direction: column; gap: 40px; }
+    .about-image-side, .about-text-side { width: 100%; }
+
+    /* Сторінка "Про нас" */
+    .about-image-side { order: 2; min-height: 250px; margin-top: 20px; }
+    .about-text-side { order: 1; padding-top: 0; }
+    .about-text-side h2 { font-size: 1.8rem; }
+    .experience-card {
+        position: relative; left: 0; bottom: 0; margin: -30px auto 0 auto;
+        width: 80%; text-align: center; z-index: 10; box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    }
+    .stats-row { flex-direction: column; gap: 20px; text-align: center; }
+
+    /* Сторінка контактів */
+    .contact-info h2 { font-size: 1.8rem; }
+    .messengers { flex-direction: column; gap: 15px; }
+    .btn-messenger { width: 100%; }
+    .contact-form-wrapper { padding: 30px 20px; }
+
+    /* Каталог товарів */
+    .main-image-box { height: 250px; }
+    .product-details h2 { font-size: 1.8rem; }
+    .price { font-size: 1.3rem; padding: 8px 15px; }
+    .order-btn { width: 100%; text-align: center; }
+    .thumbnails { overflow-x: auto; padding-bottom: 10px; scroll-behavior: smooth; }
+    .thumbnails::-webkit-scrollbar { height: 4px; }
+    .thumbnails::-webkit-scrollbar-thumb { background: #d4af37; border-radius: 10px; }
+    .thumbnails img { flex-shrink: 0; width: 80px; height: 60px; }
+}
+
+/* =========================================
+   КНОПКА-ДЗВОНИЛКА (FLOATING BUTTON)
+   ========================================= */
+.floating-call {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #d4af37;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.4);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 24px;
+    animation: pulse 2s infinite; /* Ефект пульсації */
+}
+
+.floating-call:hover {
+    transform: scale(1.1);
+    background-color: #fff;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+}
+
+/* На мобілках робимо її трохи меншою і відсуваємо вище, щоб не мішала меню браузера */
+@media (max-width: 768px) {
+    .floating-call {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 20px;
+    }
+}
