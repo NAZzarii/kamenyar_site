@@ -63,6 +63,16 @@
     <a href="tel:+380965681567" class="floating-call" title="Зателефонувати нам">📞</a>
 
     <script src="script.js"></script>
+    <!-- Netlify Identity: потрібен тут, щоб працювали листи скидання паролю / запрошення адмінки -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+                // якщо в посиланні є recovery_token / confirmation_token / invite_token —
+                // віджет сам відкриє потрібну форму (встановити пароль тощо)
+            });
+        }
+    </script>
 
 <script async id="netlify-rum-container" src=".netlify/scripts/rum" data-netlify-rum-site-id="5c163933-f611-4aaf-9355-e6245c8c4d9f" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiNWMxNjM5MzMtZjYxMS00YWFmLTkzNTUtZTYyNDVjOGM0ZDlmIiwiYWNjb3VudF9pZCI6IjY5YmVlYzhkZDRjYTQyNjgzMzRhZTZlYiIsImRlcGxveV9pZCI6IjY5YmVlZWUwZjk2MGY2OGM4ODE2NTk5NyIsImlzc3VlciI6Im5mc2VydmVyIn0.flpNBtido5bAAqXkLEGmQqK9gDcujOfJ56nJyowi0qE"></script>
 </body>
