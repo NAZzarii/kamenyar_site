@@ -1,71 +1,26 @@
 <!DOCTYPE html>
 <html lang="uk">
-
-<!-- Mirrored from kamenyardrev.org.ua/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Aug 2026 11:03:37 GMT -->
-<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>KAMENYARDREV | Каменеобробка, бруківка, пам'ятники у Рівному</title>
-    
-    <meta name="description" content="Виготовлення виробів з натурального каменю у Рівному та області. Гранітна бруківка, пам'ятники, базальтова плитка, сходи, стільниці від виробника KAMENYARDREV. Індивідуальний прорахунок та висока якість.">
-    
-    <meta name="keywords" content="камінь рівне, бруківка рівне, гранітна бруківка рівненська область, пам'ятники рівне, виготовлення пам'ятників, каменяр рівне, KAMENYARDREV, каменеобробка, натуральний камінь, базальтова плитка, гранітні плити, купити бруківку рівне, тумби, квітники граніт">
-    
-    <meta property="og:title" content="KAMENYARDREV | Вироби з натурального каменю">
-    <meta property="og:description" content="Гранітна бруківка, пам'ятники та плитка від виробника у Рівному.">
-    <meta property="og:type" content="website">
-
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Адмінка | KAMENYARDREV</title>
 </head>
 <body>
-
-    <header>
-        <a class='logo' href='index.html'>KAMENYARDREV</a>
-        <nav>
-            <a class='active' href='index.html'>Головна</a>
-            <a href="#services">Послуги</a>
-            <a href='about-us.html'>Про нас</a>
-            <a href='contact.html'>Контакти</a>
-        </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Мистецтво в <span>камені</span></h1>
-        <p>Виготовлення виробів з граніту, базальту та натурального каменю будь-якої складності. Якість, перевірена роками.</p>
-        <a class='btn' href='contact.html'>Замовити прорахунок</a>
-    </section>
-
-    <section id="services" class="services">
-        <h2 class="section-title">Наші <span>Послуги</span></h2>
-        <div class="grid">
-            <a class='card' href='product-paving.html'>
-                <h3>Бруківка</h3>
-                <p>Гранітна бруківка різних видів обробки для довговічного та стильного мощення.</p>
-            </a>
-            <a class='card' href='product-tiles.html'>
-                <h3>Плити та плитка</h3>
-                <p>Облицювальні плити з натурального каменю для фасадів, терас та інтер'єрів.</p>
-            </a>
-            <a class='card' href='product-monuments.html'>
-                <h3>Деталі пам'ятників</h3>
-                <p>Стели, тумби, квітники та портретна плитка. Індивідуальний підхід.</p>
-            </a>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 KAMENYARDREV. Усі права захищені.</p>
-    </footer>
-
-    <a href="tel:+380965681567" class="floating-call" title="Зателефонувати нам">📞</a>
-
-    <script src="script.js"></script>
-
-<script async id="netlify-rum-container" src=".netlify/scripts/rum" data-netlify-rum-site-id="5c163933-f611-4aaf-9355-e6245c8c4d9f" data-netlify-deploy-branch="" data-netlify-deploy-context="production" data-netlify-cwv-token="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzaXRlX2lkIjoiNWMxNjM5MzMtZjYxMS00YWFmLTkzNTUtZTYyNDVjOGM0ZDlmIiwiYWNjb3VudF9pZCI6IjY5YmVlYzhkZDRjYTQyNjgzMzRhZTZlYiIsImRlcGxveV9pZCI6IjY5YmVlZWUwZjk2MGY2OGM4ODE2NTk5NyIsImlzc3VlciI6Im5mc2VydmVyIn0.flpNBtido5bAAqXkLEGmQqK9gDcujOfJ56nJyowi0qE"></script>
+  <!-- Netlify Identity: керує входом в адмінку -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+  <!-- Decap CMS (наступник Netlify CMS) -->
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
-
-<!-- Mirrored from kamenyardrev.org.ua/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 06 Aug 2026 11:03:40 GMT -->
 </html>
